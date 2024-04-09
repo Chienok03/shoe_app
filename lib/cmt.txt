@@ -1,0 +1,42 @@
+MaterialApp -> SafeArea -> Scaffold
+Container -> Icon -> App Bar -> Column -> Row -> ListView -> GridView -> GestureDetector(bắt sự kiện)
+
+
+drawer: Drawer(
+          backgroundColor: Colors.white,
+          child: Column(children: [
+            DrawerHeader(
+                child: Icon(
+              Icons.account_circle_rounded,
+              size: 60,
+            )),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text(
+                "H O M E",
+                style: TextStyle(fontWeight: FontWeight.bold),
+              ),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => HomePage(),
+                    ));
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.settings),
+              title: Text("S E T T I N G",
+                  style: TextStyle(fontWeight: FontWeight.bold)),
+              onTap: () {
+                Navigator.pop(context);
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => SettingPage(),
+                    ));
+              },
+            )
+          ]),
+        ),
